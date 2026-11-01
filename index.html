@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ticiá Beauty — Design de Sobrancelhas</title>
-<meta name="description" content="Design de sobrancelhas personalizado para realçar a sua beleza natural. Agende seu horário pelo WhatsApp." />
+<meta name="description" content="Seu olhar merece mais destaque. Design de sobrancelhas personalizado na Ticiá Beauty: harmonia facial, beleza natural e cuidado em cada detalhe. Agende pelo WhatsApp." />
 
 <meta property="og:title" content="Ticiá Beauty — Design de Sobrancelhas" />
-<meta property="og:description" content="Realce o seu olhar com um design personalizado. Agende pelo WhatsApp." />
+<meta property="og:description" content="Seu olhar merece mais destaque. Design de sobrancelhas personalizado, feito para valorizar os seus traços. Agende pelo WhatsApp." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="foto.jpg" />
 
@@ -17,7 +17,7 @@
      CONFIGURAÇÃO RÁPIDA
      WhatsApp: +55 71 99352-3146
      Link oficial: https://api.whatsapp.com/send/?phone=5571993523146
-     Para trocar o número, edite os dois links "api.whatsapp.com" abaixo.
+     Para trocar o número, edite todos os links "api.whatsapp.com" abaixo.
      O link do Instagram já está configurado.
      ============================================================ -->
 
@@ -51,10 +51,11 @@
       radial-gradient(1200px 800px at 85% -10%, var(--rose-200) 0%, transparent 60%),
       radial-gradient(900px 700px at -10% 100%, #ffe3ea 0%, transparent 55%),
       linear-gradient(160deg, #fffafb 0%, var(--rose-50) 40%, #ffeef3 100%);
+    background-attachment: fixed;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: clamp(16px, 4vw, 56px);
+    padding: clamp(18px, 3.5vw, 44px) clamp(16px, 4vw, 40px) 0;
     overflow-x: hidden;
     position: relative;
   }
@@ -143,6 +144,9 @@
     position: relative;
     display: flex;
     justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin-inline: auto;
     animation: rise 1s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
@@ -258,7 +262,7 @@
   h1 {
     font-family: "Cormorant Garamond", serif;
     font-weight: 500;
-    font-size: clamp(2.7rem, 6vw, 4.4rem);
+    font-size: clamp(2.6rem, 5.6vw, 4.05rem);
     line-height: 0.98;
     letter-spacing: -0.01em;
     color: var(--wine-900);
@@ -326,6 +330,13 @@
     gap: 14px;
   }
 
+  .hero .actions {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 340px;
+  }
+  .hero .actions .btn { width: 100%; }
+
   .btn {
     position: relative;
     display: inline-flex;
@@ -382,25 +393,294 @@
     color: #a97e8c;
   }
 
+
+  /* ---------- ESTRUTURA DA PÁGINA ---------- */
+  .shell {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1120px;
+  }
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(66px, 9vw, 112px);
+  }
+
+  .card { margin-inline: auto; }
+
+  .section { position: relative; }
+
+  h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: clamp(1.95rem, 4vw, 3rem);
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    color: var(--wine-900);
+  }
+  h2 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--rose-500);
+  }
+
+  .section-head { max-width: 760px; }
+
+  .section-text {
+    font-weight: 300;
+    font-size: clamp(1rem, 1.3vw, 1.08rem);
+    line-height: 1.85;
+    color: #6b4152;
+    text-wrap: pretty;
+  }
+
+  /* identificação */
+  .identificacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-inline: clamp(0px, 2vw, 24px);
+  }
+  .identificacao h2 {
+    max-width: 21ch;
+  }
+  .identificacao .section-text {
+    max-width: 62ch;
+    margin-top: 24px;
+  }
+
+  .text-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgba(201, 162, 122, 0.7);
+    color: var(--wine-700);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.25s ease, border-color 0.25s ease;
+  }
+  .text-cta span {
+    transition: transform 0.25s ease;
+  }
+  .text-cta:hover {
+    color: var(--rose-500);
+    border-color: var(--rose-400);
+  }
+  .text-cta:hover span { transform: translateX(4px); }
+
+  /* benefícios */
+  .benefits-head h2 {
+    max-width: 24ch;
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: clamp(34px, 4.5vw, 52px);
+    border-top: 1px solid rgba(201, 162, 122, 0.4);
+  }
+  .benefit {
+    padding: clamp(26px, 3vw, 38px) clamp(22px, 3vw, 36px) 0 0;
+  }
+  .benefit + .benefit {
+    border-left: 1px solid rgba(201, 162, 122, 0.28);
+    padding-left: clamp(22px, 3vw, 36px);
+  }
+  .benefit-num {
+    display: block;
+    margin-bottom: 18px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+  }
+  .benefit h3 {
+    margin-bottom: 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: clamp(1.35rem, 2vw, 1.7rem);
+    color: var(--wine-900);
+  }
+  .benefit p {
+    max-width: 28ch;
+    font-weight: 300;
+    font-size: 0.94rem;
+    line-height: 1.75;
+    color: #6b4152;
+  }
+
+  /* diferencial */
+  .statement {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(26px, 5vw, 64px);
+    align-items: center;
+    padding: clamp(34px, 5.5vw, 64px);
+    border-radius: 34px;
+    border: 1px solid rgba(201, 162, 122, 0.42);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(255, 233, 239, 0.8));
+    box-shadow: 0 30px 70px -40px rgba(124, 50, 73, 0.35);
+    overflow: hidden;
+  }
+  .statement::before {
+    content: "“";
+    position: absolute;
+    right: -6px;
+    top: -46px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 230px;
+    line-height: 1;
+    color: rgba(209, 99, 127, 0.12);
+    pointer-events: none;
+  }
+  .statement h2 {
+    position: relative;
+    max-width: 20ch;
+  }
+  .statement-body {
+    position: relative;
+  }
+  .statement-body .btn {
+    margin-top: 26px;
+  }
+
+  /* CTA final */
+  .cta-card {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(48px, 7vw, 78px) clamp(24px, 5vw, 60px);
+    border-radius: 34px;
+    text-align: center;
+    background: linear-gradient(145deg, #6a2a3f 0%, var(--wine-700) 45%, var(--wine-900) 100%);
+    border: 1px solid rgba(201, 162, 122, 0.35);
+    box-shadow: 0 40px 90px -40px rgba(69, 24, 42, 0.7);
+  }
+  .cta-card::before {
+    content: "";
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    top: -260px;
+    right: -160px;
+    background: radial-gradient(circle, rgba(231, 139, 164, 0.35), transparent 65%);
+    pointer-events: none;
+  }
+  .cta-card::after {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border-radius: 24px;
+    border: 1px solid rgba(201, 162, 122, 0.22);
+    pointer-events: none;
+  }
+  .cta-card > * { position: relative; z-index: 1; }
+  .cta-card .eyebrow {
+    justify-content: center;
+    color: var(--rose-300);
+  }
+  .cta-card .eyebrow::before {
+    background: linear-gradient(90deg, transparent, var(--rose-300));
+  }
+  .cta-card h2 {
+    max-width: 22ch;
+    margin-inline: auto;
+    color: #fff;
+  }
+  .cta-card h2 em { color: var(--rose-200); }
+  .cta-card .section-text {
+    max-width: 58ch;
+    margin: 24px auto 0;
+    color: rgba(255, 240, 244, 0.78);
+  }
+  .cta-card .btn { margin-top: 32px; }
+  .cta-note {
+    margin-top: 20px;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 240, 244, 0.5);
+  }
+
+  .btn-light {
+    color: var(--wine-900);
+    background: #fff;
+    box-shadow: 0 18px 34px -14px rgba(0, 0, 0, 0.55);
+  }
+  .btn-light:hover {
+    transform: translateY(-3px);
+    background: var(--rose-50);
+    box-shadow: 0 24px 40px -14px rgba(0, 0, 0, 0.6);
+  }
+
   /* ---------- RODAPÉ ---------- */
   .footer {
     position: relative;
     z-index: 1;
-    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: clamp(64px, 8vw, 96px);
+    padding-bottom: clamp(48px, 6vw, 72px);
     text-align: center;
-    font-size: 0.7rem;
-    letter-spacing: 0.22em;
+  }
+  .footer::before {
+    content: "";
+    width: 64px;
+    height: 1px;
+    background: rgba(201, 162, 122, 0.6);
+    margin-bottom: 10px;
+  }
+  .footer-brand {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;
+    color: var(--wine-900);
+  }
+  .footer-brand span {
+    display: block;
+    margin-top: 3px;
+    font-family: "Jost", sans-serif;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #a97e8c;
+  }
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #b98d9c;
   }
-  .footer a {
+  .footer-links a {
     color: var(--wine-700);
     text-decoration: none;
-    border-bottom: 1px solid rgba(209, 99, 127, 0.4);
+    border-bottom: 1px solid transparent;
     padding-bottom: 2px;
-    transition: color 0.25s, border-color 0.25s;
+    transition: color 0.25s ease, border-color 0.25s ease;
   }
-  .footer a:hover { color: var(--rose-500); border-color: var(--rose-400); }
+  .footer-links a:hover {
+    color: var(--rose-500);
+    border-color: rgba(209, 99, 127, 0.4);
+  }
+  .footer-year {
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    color: #b98d9c;
+  }
 
   /* ---------- FLUTUANTE WHATSAPP (mobile) ---------- */
   .fab {
@@ -427,11 +707,14 @@
     body { align-items: flex-start; padding-top: 28px; }
     .card {
       grid-template-columns: 1fr;
+      max-width: 640px;
+      margin-inline: auto;
       text-align: center;
       gap: 30px;
       border-radius: 28px;
       padding: 28px 22px 34px;
     }
+    .photo-wrap { max-width: 300px; }
     .photo-frame { max-width: 300px; border-radius: 110px 110px 22px 22px; }
     .frame-outline { inset: -10px -10px 16px 16px; border-radius: 110px 110px 22px 22px; }
     .badge { width: 92px; height: 92px; right: -6px; bottom: -4px; }
@@ -448,9 +731,50 @@
       margin: 22px 0 28px;
     }
     .actions { justify-content: center; }
+    .hero .actions { margin-inline: auto; }
     .btn { flex: 1 1 100%; max-width: 340px; }
     .fab { width: 52px; height: 52px; bottom: 16px; right: 16px; }
     .halo { width: 92vmax; height: 92vmax; }
+
+    .page { max-width: 640px; margin-inline: auto; gap: 64px; }
+    .identificacao { padding-inline: 0; }
+    .benefits-head .eyebrow { justify-content: flex-start; }
+    .benefits-grid {
+      grid-template-columns: 1fr;
+      border-top: 0;
+      margin-top: 30px;
+    }
+    .benefit {
+      padding: 24px 0;
+      border-top: 1px solid rgba(201, 162, 122, 0.28);
+    }
+    .benefit + .benefit {
+      border-left: 0;
+      padding-left: 0;
+    }
+    .benefit p { max-width: 46ch; }
+    .statement {
+      grid-template-columns: 1fr;
+      padding: 34px 24px;
+      border-radius: 28px;
+    }
+    .statement::before { font-size: 160px; top: -30px; }
+    .statement .btn {
+      width: 100%;
+      max-width: 340px;
+      padding-inline: 18px;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+    }
+    .cta-card { padding: 48px 22px 42px; border-radius: 28px; }
+    .cta-card::after { inset: 10px; border-radius: 20px; }
+    .cta-card .btn { width: 100%; max-width: 340px; }
+  }
+
+  @media (max-width: 520px) {
+    h2 { font-size: clamp(1.85rem, 8.6vw, 2.4rem); }
+    .section-text { font-size: 0.98rem; }
+    .footer { margin-top: 54px; padding-bottom: 40px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -470,74 +794,183 @@
   <span class="sparkle s3" aria-hidden="true">✦</span>
   <span class="sparkle s4" aria-hidden="true">✧</span>
 
-  <main class="card">
+  <div class="shell">
+    <main class="page">
 
-    <div class="photo-wrap">
-      <div class="frame-outline" aria-hidden="true"></div>
-      <div class="photo-frame">
-        <img
-          src="foto.jpg"
-          alt="Ticiá Beauty — design de sobrancelhas"
-          width="1122"
-          height="1402"
-          loading="eager"
-        />
-      </div>
-      <div class="badge" aria-hidden="true">
-        <span>Beleza<em>natural</em></span>
-      </div>
-    </div>
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="card">
+          <div class="photo-wrap">
+            <div class="frame-outline" aria-hidden="true"></div>
+            <div class="photo-frame">
+              <img
+                src="foto.jpg"
+                alt="Ticiá Beauty — design de sobrancelhas"
+                width="1122"
+                height="1402"
+                loading="eager"
+              />
+            </div>
+            <div class="badge" aria-hidden="true">
+              <span>Beleza<em>natural</em></span>
+            </div>
+          </div>
 
-    <div class="content">
-      <p class="eyebrow">Ticiá Beauty</p>
+          <div class="content">
+            <p class="eyebrow">Ticiá Beauty</p>
 
-      <h1>
-        Design de
-        <span class="script">sobrancelhas</span>
-      </h1>
+            <h1 id="hero-title">
+              Seu olhar merece
+              <span class="script">mais destaque.</span>
+            </h1>
 
-      <div class="divider" aria-hidden="true"><span>✦</span></div>
+            <div class="divider" aria-hidden="true"><span>✦</span></div>
 
-      <p class="lead">
-        Realce o seu olhar com um design personalizado, feito sob medida para o
-        seu rosto. Cuidado, precisão e um atendimento pensado para você se sentir
-        ainda mais linda.
-      </p>
+            <p class="lead">
+              Suas sobrancelhas fazem parte da expressão do seu rosto. Um design
+              personalizado respeita seus traços, valoriza sua beleza natural e
+              transforma pequenos detalhes em uma grande diferença.
+            </p>
 
-      <ul class="perks">
-        <li>Design personalizado</li>
-        <li>Atendimento exclusivo</li>
-        <li>Ambiente acolhedor</li>
-      </ul>
+            <ul class="perks">
+              <li>Design pensado para o seu rosto.</li>
+              <li>Atenção a cada detalhe.</li>
+              <li>Atendimento individualizado.</li>
+            </ul>
 
-      <div class="actions">
-        <a class="btn btn-primary" href="https://api.whatsapp.com/send/?phone=5571993523146&text=Ol%C3%A1%21+Vim+pelo+link+e+gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <div class="actions">
+              <a class="btn btn-primary" href="https://api.whatsapp.com/send/?phone=5571993523146&text=Ol%C3%A1%21+Vim+pelo+link+e+gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.19 5.07 4.47.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/>
             <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.33c0-4.54 3.7-8.24 8.24-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.24 8.24z"/>
           </svg>
-          Agendar no WhatsApp
-        </a>
+                QUERO VALORIZAR MEU OLHAR
+              </a>
 
-        <a class="btn btn-ghost" href="https://www.instagram.com/ticiiabeauty?rpxt=a21tdXh1OWtzdnk4" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <a class="btn btn-ghost" href="https://www.instagram.com/ticiiabeauty?rpxt=a21tdXh1OWtzdnk4" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/>
             <circle cx="12" cy="12" r="4.2"/>
             <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/>
           </svg>
-          Ver Instagram
-        </a>
-      </div>
+                CONHECER MEU TRABALHO
+              </a>
+            </div>
 
-      <p class="note">Atendimento com horário marcado ✦ resposta rápida</p>
-    </div>
-  </main>
+            <p class="note">Agende pelo WhatsApp e consulte os horários disponíveis.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- IDENTIFICAÇÃO -->
+      <section class="section identificacao" aria-labelledby="identificacao-title">
+        <span class="eyebrow">Um olhar em harmonia</span>
+        <h2 id="identificacao-title">Suas sobrancelhas estão <em>valorizando</em> o seu rosto?</h2>
+        <p class="section-text">
+          Às vezes, não é preciso mudar muita coisa para perceber a diferença.
+          Sobrancelhas sem definição, formatos que não valorizam seus traços ou um
+          design feito sem considerar seu rosto podem comprometer a harmonia do
+          olhar. Aqui, cada detalhe importa.
+        </p>
+        <a class="text-cta" href="https://api.whatsapp.com/send/?phone=5571993523146&text=Ol%C3%A1%21+Vim+pelo+link+e+gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" target="_blank" rel="noopener">
+          QUERO UM DESIGN PENSADO PARA MIM <span aria-hidden="true">→</span>
+        </a>
+      </section>
+
+      <!-- BENEFÍCIOS -->
+      <section class="section beneficios" aria-labelledby="beneficios-title">
+        <div class="section-head benefits-head">
+          <span class="eyebrow">Beleza que se sente</span>
+          <h2 id="beneficios-title">
+            Não é apenas sobre sobrancelhas.<br />
+            <em>É sobre como você se sente.</em>
+          </h2>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="benefit">
+            <span class="benefit-num">01</span>
+            <h3>Harmonia facial</h3>
+            <p>Design pensado para respeitar o formato do rosto.</p>
+          </article>
+          <article class="benefit">
+            <span class="benefit-num">02</span>
+            <h3>Beleza natural</h3>
+            <p>Valorize seus traços sem perder sua identidade.</p>
+          </article>
+          <article class="benefit">
+            <span class="benefit-num">03</span>
+            <h3>Cuidado em cada detalhe</h3>
+            <p>Atendimento com atenção, delicadeza e precisão.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- DIFERENCIAL -->
+      <section class="section" aria-labelledby="diferencial-title">
+        <div class="statement">
+          <div>
+            <span class="eyebrow">Feito para você</span>
+            <h2 id="diferencial-title">
+              Seu rosto não é igual ao de ninguém.
+              <em>Seu design também não deveria ser.</em>
+            </h2>
+          </div>
+          <div class="statement-body">
+            <p class="section-text">
+              Na Ticiá Beauty, o atendimento começa entendendo suas características
+              e o resultado que você deseja. Cada design é pensado individualmente
+              para valorizar sua beleza natural.
+            </p>
+            <a class="btn btn-ghost" href="https://api.whatsapp.com/send/?phone=5571993523146&text=Ol%C3%A1%21+Vim+pelo+link+e+gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" target="_blank" rel="noopener">
+              QUERO MEU DESIGN PERSONALIZADO
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section class="section" aria-labelledby="cta-title">
+        <div class="cta-card">
+          <span class="eyebrow">Seu momento</span>
+          <h2 id="cta-title">
+            Está esperando o momento certo
+            <em>para cuidar de você?</em>
+          </h2>
+          <p class="section-text">
+            Seu próximo momento de autocuidado pode começar com uma mensagem.
+            Entre em contato com a Ticiá Beauty, consulte os horários disponíveis e
+            agende seu atendimento.
+          </p>
+          <a class="btn btn-light" href="https://api.whatsapp.com/send/?phone=5571993523146&text=Ol%C3%A1%21+Vim+pelo+link+e+gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.19 5.07 4.47.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/>
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.33c0-4.54 3.7-8.24 8.24-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.24 8.24z"/>
+          </svg>
+            AGENDAR MEU HORÁRIO PELO WHATSAPP
+          </a>
+          <p class="cta-note">Atendimento com horário marcado · resposta pelo WhatsApp</p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p class="footer-brand">Ticiá Beauty<span>Design de sobrancelhas</span></p>
+      <p class="footer-links">
+        <a href="https://www.instagram.com/ticiiabeauty?rpxt=a21tdXh1OWtzdnk4" target="_blank" rel="noopener">Instagram</a>
+        <span aria-hidden="true">✦</span>
+        <a href="https://api.whatsapp.com/send/?phone=5571993523146&text=Ol%C3%A1%21+Vim+pelo+link+e+gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" target="_blank" rel="noopener">WhatsApp</a>
+      </p>
+      <p class="footer-year">© 2026 Ticiá Beauty</p>
+    </footer>
+  </div>
 
   <a class="fab" href="https://api.whatsapp.com/send/?phone=5571993523146&text=Ol%C3%A1%21+Vim+pelo+link+e+gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.19 5.07 4.47.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/>
-      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.33c0-4.54 3.7-8.24 8.24-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.24 8.24z"/>
-    </svg>
+            <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.19 5.07 4.47.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/>
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.33c0-4.54 3.7-8.24 8.24-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.24 8.24z"/>
+          </svg>
   </a>
 
 </body>
